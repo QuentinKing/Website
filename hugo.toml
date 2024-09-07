@@ -1,0 +1,14 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Quentin King - Technical Artist'
+theme = 'gallery'
+
+[params]
+  defaultTheme = "dark"
+  [params.author]
+    name = "Quentin King"
+  [params.socialIcons]
+    youtube = "https://www.youtube.com/@QuontynTechArt"
+    linkedin = "https://www.linkedin.com/in/quentin-king/"
+    instagram = "https://www.instagram.com/quontyn/"
+    github = "https://github.com/QuentinKing"

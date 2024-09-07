@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quentin King on Quentin King - Technical Artist</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Quentin King on Quentin King - Technical Artist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shaders</title>
+      <link>http://localhost:1313/shaders/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/shaders/</guid><media:content url="http://localhost:1313/shaders/shader_hu5506387405857869315.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/shader_hu5506387405857869315.jpg&quot; /&gt;
+          &lt;p&gt;This is about shaders&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Houdini / Procedural</title>
+      <link>http://localhost:1313/houdini/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/</guid><media:content url="http://localhost:1313/houdini/houdini_hu4256684468569992076.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/houdini_hu4256684468569992076.png&quot; /&gt;
+          &lt;p&gt;This is about houdini&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Graphics Programming</title>
+      <link>http://localhost:1313/graphics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/graphics/</guid><media:content url="http://localhost:1313/graphics/programming_hu9394090028627914358.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/graphics/programming_hu9394090028627914358.jpg&quot; /&gt;
+          &lt;p&gt;This is about graphics&lt;/p&gt;
+        </description></item>
+  </channel>
+</rss>
