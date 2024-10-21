@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="dark" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paintable Stylized Edge Damage - Quentin King - Technical Artist</title>
+  <link rel="canonical" href="http://localhost:1313/houdini/edgedamage/" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="description" content="Fast, artist-controllable stylized edge damage in a Houdini HDA. Plus a quick tutorial on custom Python Viewer Stroke States!" />
+  
+  
+    <meta name="robots" content="index, follow" />
+  
+  <meta property="og:title" content="Paintable Stylized Edge Damage" />
+<meta property="og:description" content="Fast, artist-controllable stylized edge damage in a Houdini HDA. Plus a quick tutorial on custom Python Viewer Stroke States!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/houdini/edgedamage/" /><meta property="og:image" content="http://localhost:1313/houdini/edgedamage/thumbnail.png" /><meta property="article:section" content="houdini" />
+  
+  
+
+  
+  <link rel="stylesheet" href="/css/main.min.90a1cb79c240a58b2fa7af74bfcf1686f4d587c5951c7a4f92b1199abf410264.css" />
+  
+  
+  <script src="/js/main.64868ea2cfa671267b57ebb83bbd8fe90eb9b2a50c91e4e037348a389c272b73.js" defer></script></head>
+
+  <body>
+    <header>
+  
+    <a class="btn btn-square" href="/houdini/" title="Houdini &#43; Procedural">
+      <svg width="24" height="24" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"></path>
+      </svg>
+    </a>
+  
+  
+    <ul>
+      <li>
+        <button class="btn btn-square group" id="menu-toggle" aria-expanded="false" type="button" title="Menu">
+          <svg class="group-aria-expanded:hidden" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"></path>
+          </svg>
+          <svg class="hidden group-aria-expanded:block" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"></path>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  
+</header>
+
+  <menu class="hidden" id="menu">
+    
+      <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a aria-current="false" href="/shaders/" itemprop="url">
+          <span itemprop="name">Realtime Effects</span>
+        </a>
+      </li>
+    
+      <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a aria-current="true" href="/houdini/" itemprop="url">
+          <span itemprop="name">Houdini &#43; Procedural</span>
+        </a>
+      </li>
+    
+      <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a aria-current="false" href="/graphics/" itemprop="url">
+          <span itemprop="name">Graphics Programming</span>
+        </a>
+      </li>
+    
+  </menu>
+
+
+
+    <main>
+      
+  
+  <hgroup>
+    <h1>Paintable Stylized Edge Damage</h1>
+    
+  </hgroup>
+
+  
+  <div class="blogpost">
+    
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Jhn1Rf1Q-fo?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<center style="white-space: pre-line">
+Can download the houdini scene (for free!) over at <a class="link" href='https://quontyn.gumroad.com/l/ikflco'> gumroad!</a>
+</center>
+<p><br>
+So I’ve been experimenting with procedural edge damage setups, because I see stylized / low poly games use it a ton. There’s already a lot of workflows out there for it but I specifically wanted to come up with something that had super fast iteration time, was non-destructive, but still retained a ton of artist control so they could specifically target areas of their assets with edge damages of different intensities.</p>
+<p><br>
+Procedural edge damage is certainly nothing new to Houdini. The SideFX Labs team even has it’s own edge damage node (<a href="https://www.sidefx.com/docs/houdini/nodes/sop/labs--edge_damage-2.0.html">https://www.sidefx.com/docs/houdini/nodes/sop/labs--edge_damage-2.0.html</a>) which honestly works for a lot of situations, it even respects a mask attribute which you can paint on before hand to get a similar result to my setup above.</p>
+<p><br>
+But I also felt that it can be improved upon, the edge damage node requires a lot of parameter tweaking and it’s not very interactive, it’s hard to make local changes (like increasing / decreasing damage intensities) to certain edges which can slow down the workflow a bit. So my main goal for this tool was to make the process more interactive (with the help of a custom python viewer state), more control on intensities and meshing options, and to make the boolean intersections more reliable.</p>
+<p><br>
+I’ve wrapped up my tool into an HDA with a relatively small graph, definitely download the scene if you want to dig deep into each node! But in this post I’ll do a high level overview of the ideas as well as a small guide on setting up the interactive python viewer state.</p>
+<center style="margin-top:2rem">
+    <img src="network.png">
+</center>
+<hr>
+<br>
+<h1 id="edge-damage-basics">Edge Damage Basics</h1>
+<div>
+    <ul class="bullet">
+        <br>
+        The basic idea for edge damage workflows, which you’ll find most setups use, usually goes something like this:
+        <div class="indent">
+            <li>
+                Get some base asset
+            </li>
+            <li>
+                Subdivide your original mesh so there is more polygon data
+            </li>
+            <li>
+                Blur the positional data of your mesh (so edges get brought in and flat polygons stay flat)
+            </li>
+            <li>
+                Add a noisy, positive offset along the normal of each vert
+            </li>
+            <li>
+                Do a boolean intersection of your noisy mesh and your original geometry
+            </li>
+        </div>
+    </ul>
+</div>
+<center style="margin-top:2rem">
+    <img src="noise.png">
+</center>
+<hr>
+<br>
+<h1 id="the-mask">The Mask</h1>
+<br>
+To expand on this, we need a mask for where to apply the edge damage. This should be done after subdividing our geometry into the high res variant. Easiest way to do this in Houdini is by using the Attribute Paint node, which is already set up to paint a mask attribute.  
+<center style="margin-top:2rem">
+    <img src="mask.png">
+</center>
+<p><br>
+We only want to apply damage in these areas, the approach used in the SideFx Labs tool is to weigh the positional blur based on this mask attribute, but I’ve personally found a better approach is to use this mask attribute as an additional vertex offset along with your noise. The reason being is that you can crank this mask value past 1 to get even extremer edge damage in “hotspots“ as well as having negative mask values to “erase“ edge damage. It gives you a ton of control. Instead of thinking of it like a mask, think of it like a “damage strength“. Depending on the resolution of your geo, you can even set a super high value for this and carve damage into the flat faces of your mesh. Kind of like a low-poly sculpting tool.</p>
+<div class="three-by-side">
+    <div>
+        <img src="paint1.png">
+    </div>
+    <div>
+        <img src="paint2.png">
+    </div>
+    <div>
+        <img src="paint3.png">
+    </div>
+</div>
+<br>
+From left to right, that’s our mask attribute, then the standard blur + noise combo, and then finally a vertex offset along the normals based on the mask attribute. This is done with some super simple VEX code:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> mask <span style="color:#f92672">=</span> 1.<span style="color:#a6e22e">0</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">@mask</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@P</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">@N</span> <span style="color:#f92672">*</span> mask <span style="color:#f92672">*</span> 0.<span style="color:#a6e22e">1</span>;
+</span></span></code></pre></div><p>Now, you’ll probably be pretty sketched out by that last mesh. It is clearly self intersecting and doesn’t seem like it would play very nice with a boolean intersection on our original geometry. And that is totally true, it results in a pretty horrible output:</p>
+<div class="picture-subtitle">
+    <div>
+        <center>
+            <img src="bad.png">
+        </center>
+    </div>
+    <div class="subtitle">
+        <center>
+            oh no : (
+        </center>
+    </div>
+</div>
+<hr>
+<br>
+<h1 id="meshing">Meshing</h1>
+<br>
+Actually what you saw above is a common limitation I see with procedural damage tools. If your input geo is complex enough, or your parameters are too crazy, it breaks the boolean operation you have to do at the end. This is especially an issue with our setup since we are pushing the verts even further in some cases for heavily damaged areas. 
+<p><br>
+However, the shape of our deformed geo is still <em>pretty</em> close. Boolean operations work well on water tight meshes so here is a quick and simple way to clean up our geo. You basically just want to convert our geo into a VDB surface volume, and then convert it back to a normal polygon mesh. I find that if I keep the VDB resolution similar to the resolution of our original subdivision, it will still maintain most of the details. But you’re now left with a water-tight proxy mesh of what we had in the previous step.</p>
+<div class="side-by-side">
+    <div>
+        <img src="vdb.png">
+    </div>
+    <div>
+        <img src="watertight.png">
+    </div>
+</div>
+<p><br>
+The next issue you’ll see is that after converting back to a polygon mesh, the structure is way too clean and uniform. So I do a second remeshing afterwards to reduce its polycount and make the details more irregular. I actual provide two methods of doing this, you can either use a Remesh node or a <strong>PolyReduce</strong> node. I prefer the <strong>PolyReduce</strong> node as the result is more consistent as you paint changes on to the mask, and it has a tendency to create sharper cuts / chipping.</p>
+<div class="side-by-side">
+    <div class="picture-subtitle">
+        <div>
+            <center>
+                <img src="remesh.png">
+            </center>
+        </div>
+        <div class="subtitle">
+            <center>
+            Remesh
+            </center>
+        </div>
+    </div>
+    <div class="picture-subtitle">
+        <div>
+            <center>
+                <img src="polyreduce.png">
+            </center>
+        </div>
+        <div class="subtitle">
+            <center>
+            PolyReduce
+            </center>
+        </div>
+    </div>
+</div>
+<p>All in all that leaves us with a pretty good and stable result to do a boolean intersection with</p>
+<center style="margin-top:2rem">
+    <img src="booleanintersection.png">
+</center>
+<hr>
+<br>
+<h1 id="custom-python-viewer-state-for-interactibility">Custom Python Viewer State for Interactibility</h1>
+<p><br>
+The real beauty of this tool is that it has it’s own <a class="link" href='https://www.sidefx.com/docs/houdini/hom/python_states.html'> custom python viewer state</a> that lets you paint directly on your asset and quickly see the changes in your mesh. I wanted to include this section because as I looked for resources online on creating your own stroke viewer state, like the one you see in an attribute paint, I could not find a lot of information on how to actually set it up. So I eventually fumbled into a working implementation and wanted to relay the findings in case it helps anyone else down the road.</p>
+<p><br>
+We can package the entire network as it exists right now into a HDA but it’s kind of clumsy to use, you’d have to go into the network, select the attribute paint, paint on the mask, look at the output, go back to the attribute paint, etc… What we really want is just to expose all of the viewport controls to our root HDA. To start, we are going to create a new custom viewer state on our HDA</p>
+<div>
+    <ul class="bullet">
+        <div class="indent">
+            <li>
+                Open up the type properties of your HDA (Right click > Type Properties…)
+            </li>
+            <li>
+                Go to the Interactive tab, and under the State Script section, create a new state script
+            </li>
+            <li>
+                This will pop-up a code generator, it will basically give you some boilerplate code to get started. Since we are building a interactive painting tool, you will want to choose the Stroke sample.
+            </li>
+        </div>
+    </ul>
+</div>
+<div class="side-by-side">
+    <div>
+        <img src="statescript.png">
+    </div>
+    <div>
+        <img src="generator.png">
+    </div>
+</div>
+<p><br>
+Hit Apply on everything, and now you can edit your state code either in this state script tab. Or, (the better way) right click on your node and choose <strong>Edit Extra Sections Source Code</strong> which open it open it up in your configured text editor. You’ll see that it’s create a new class that derives from <strong>StrokeState</strong>. If you are curious, you can find the source code for that class in the houdini program files <em><strong>/houdini/viewerstates/sidefx_stroke.py</strong></em>,  honestly just digging through that source code helped me figure out how all of this works lol.</p>
+<p><br>
+You can enter your viewer state by selecting the node in the network graph, hover over the viewport and then hitting enter. You should see a cursor pop up, but unfortunately you’ll get a nasty error whenever trying to paint anything.</p>
+<div class="picture-subtitle">
+    <div>
+        <center>
+            <img src="strokeerror.png">
+        </center>
+    </div>
+    <div class="subtitle">
+        <center>
+        oh no again : (
+        </center>
+    </div>
+</div>
+<p><br>
+The issue is that the sample viewer state expects a bunch of stroke attributes on your HDA node (like stroke_attrib, stroke_radius, stroke_opacity, there is a ton of them). Basically what the viewer state is doing is taking the current value of these attributes and attaching them to the stroke geometry whenever you paint a new brush stroke.</p>
+<p><br>
+I’m not going to assume I know which ones are required for the viewer state to work and which ones are optional, so I’ll just relay the attributes I created on my HDA</p>
+<div>
+    <ul class="bullet">
+        <div class="indent">
+            <li>
+                <b>stroke_attrib</b> - The name of the attribute we are painting, in our case this is our mask attribute
+            </li>
+            <li>
+                <b>stroke_float</b> - The value we are painting into the attribute, in our case this is the damage strength
+            </li>
+            <li>
+                <b>stroke_attribtype</b> - The type of the attribute, I set the default for this to 1 as we are working with float attributes
+            </li>
+            <li>
+                <b>stroke_radius</b> - The radius / size of the cursor
+            </li>
+            <li>
+                <b>stroke_opacity</b> - The opacity of the stroke
+            </li>
+            <li>
+                <b>stroke_softedge</b> - The falloff on the stroke, I just leave this at 0.5 for simplicity
+            </li>
+            <li>
+                <b>stroke_projtype</b> - How we are projecting the stroke in the viewport, I set this to 4 which is the value for projecting onto our geometry.
+            </li>
+        </div>
+    </ul>
+</div>
+<p><br>
+If you’re wondering where all those magic default values came from, I unfortunately have to tell you it was from digging through the source python code and looking at how the attribute paint node is set up.</p>
+<p><br>
+These are the stroke settings, but we also need to set up attributes that hold the actual stroke geometry, which will be an array of brush strokes that populates as the user interacts with the tool. We need to pass this data down to our attribute paint node, so the easiest way to do this is just linking the attribute paint’s stroke geo to our root HDA. If you go into the stroke tab of the attribute paint you should be able to drag the strokes array into your HDA’s type properties.</p>
+<center style="margin-top:2rem">
+    <img src="numstrokes.png">
+</center>
+<p><br>
+<strong>NOTE:</strong> There is one more gotcha. The attribute paint stroke array has an invisible parameter called stroke#_color that will not get brought over when you drag and drop the parameter like this. You have to do this manually in your HDA properties or else you’ll get a python error. This has no impact on the actual functionality since we don’t use the stroke color at all, you’ll just need to make sure you have it in there.</p>
+<center style="margin-top:2rem">
+    <img src="strokecolor.png">
+</center>
+<p><br>
+Assuming there were no roadbumps, you now technically have a working stroke viewer state you can now expand on. If you do run into problems, you can check out the <strong>Viewer State Browser</strong> to check out any error messages or logs. You’ll know it’s working correctly if you can see the stroke data being populated in the stroke geo array.</p>
+<center style="margin-top:2rem">
+    <img src="workingstroke.png">
+</center>
+<p><br>
+From here, it’s really up to you on how you want to customize it. I just wanted to show off a general guide on how you can get it into a working state. One trick I implement in my tool is to have multiple different “view states“ which is controlled by a switch node before the final input driven from an attribute in the HDA.</p>
+<center style="margin-top:2rem">
+    <img src="viewstates.png">
+</center>
+<p><br>
+This lets users switch between viewing the mask, output, boolean geometry with some hotkeys. I’m basically just linking up some hotkeys and menu actions in my <strong>createViewerStateTemplate()</strong> function, and then I modify the visual_mode attribute based on the events I get in the <strong>onMenuAction()</strong> function.</p>
+<p><br>
+Another super useful feature I implemented in the HDA is to cache the geometry strokes and pass them into the attribute paint network which helps performance a ton. But for all the actual python implementation I encourage you to download the project and check it out : )</p>
+
+</div>
+  
+
+
+
+    </main>
+    <footer>
+  
+  <section class="social-icons">
+    
+    <a title="Linkedin" href="https://www.linkedin.com/in/quentin-king/">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+      </svg>
+    </a>
+    
+    
+    
+    
+    
+    <a target="_blank" rel="noopener" title="YouTube" href="https://www.youtube.com/@QuontynTechArt">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
+      </svg>
+    </a>
+    
+    
+    <a target="_blank" rel="noopener" title="GitHub" href="https://github.com/QuentinKing">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+      </svg>
+    </a>
+    
+    
+      <a target="_blank" rel="noopener" title="Instagram" href="https://www.instagram.com/quontyn/">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </a>
+    
+    
+    
+  </section>
+
+
+  <section>
+    
+    
+  </section>
+</footer>
+
+  </body>
+</html>

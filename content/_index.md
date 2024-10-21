@@ -1,5 +1,5 @@
 ---
-description: Collection of my projects and tutorials
+subtitle: Technical Artist and Programmer
 
 title: Quentin King
 ---

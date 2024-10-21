@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shaders on Quentin King - Technical Artist</title>
+    <title>Realtime Effects on Quentin King - Technical Artist</title>
     <link>http://localhost:1313/shaders/</link>
-    <description>Recent content in Shaders on Quentin King - Technical Artist</description>
+    <description>Recent content in Realtime Effects on Quentin King - Technical Artist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://localhost:1313/shaders/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Shaders</title>
-      <link>http://localhost:1313/shaders/ashduasid/</link>
+      <title>Remaking Outer Wilds Black Hole Shader</title>
+      <link>http://localhost:1313/shaders/blackhole/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/shaders/ashduasid/</guid><description>This is about shaders</description></item>
+      <guid>http://localhost:1313/shaders/blackhole/</guid><media:content url="http://localhost:1313/shaders/blackhole/thumbnail_hu12191411956877019804.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/blackhole/thumbnail_hu12191411956877019804.png&quot; /&gt;
+          &lt;p&gt;Implementing a gravitational lensing shader in Unity.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Remaking Deaths Door’s Portal Effect</title>
+      <link>http://localhost:1313/shaders/portal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/shaders/portal/</guid><media:content url="http://localhost:1313/shaders/portal/thumbnail_hu7910343355886011656.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/portal/thumbnail_hu7910343355886011656.jpg&quot; /&gt;
+          &lt;p&gt;Using the stencil buffer and some rendering tricks in Unity to remake this portal effect from Death’s Door.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Faking PBR on Mobile using MatCaps</title>
+      <link>http://localhost:1313/shaders/matcaps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/shaders/matcaps/</guid><media:content url="http://localhost:1313/shaders/matcaps/thumbnail_hu18138109572283268007.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/matcaps/thumbnail_hu18138109572283268007.jpg&quot; /&gt;
+          &lt;p&gt;Implementing a low cost alternative to PBR shaders for low-end mobile devices.&lt;/p&gt;
+        </description></item>
   </channel>
 </rss>

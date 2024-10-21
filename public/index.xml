@@ -7,31 +7,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Shaders</title>
-      <link>http://localhost:1313/shaders/</link>
+      <title>Alpha Cards to Opaque Geometry for UE5 Nanite Performance</title>
+      <link>http://localhost:1313/houdini/alphacards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/shaders/</guid><media:content url="http://localhost:1313/shaders/shader_hu5506387405857869315.jpg" type="image/jpeg"/>
+      <guid>http://localhost:1313/houdini/alphacards/</guid><media:content url="http://localhost:1313/houdini/alphacards/thumbnail_hu682673869464044546.png" type="image/jpeg"/>
         <description>
-          &lt;img src=&quot;http://localhost:1313/shaders/shader_hu5506387405857869315.jpg&quot; /&gt;
-          &lt;p&gt;This is about shaders&lt;/p&gt;
+          &lt;img src=&quot;http://localhost:1313/houdini/alphacards/thumbnail_hu682673869464044546.png&quot; /&gt;
+          &lt;p&gt;Houdini pipeline to auto convert assets using alpha cards into opaque geometry. This allows the materials to use Nanite&#39;s fixed function rendering path in UE5 for optimized performance in the Nanite VizBuffer.&lt;/p&gt;
         </description></item>
     <item>
-      <title>Houdini / Procedural</title>
-      <link>http://localhost:1313/houdini/</link>
+      <title>DirectX NES Emulator</title>
+      <link>http://localhost:1313/graphics/emulator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/houdini/</guid><media:content url="http://localhost:1313/houdini/houdini_hu4256684468569992076.png" type="image/jpeg"/>
+      <guid>http://localhost:1313/graphics/emulator/</guid><media:content url="http://localhost:1313/graphics/emulator/thumbnail_hu9394090028627914358.jpg" type="image/jpeg"/>
         <description>
-          &lt;img src=&quot;http://localhost:1313/houdini/houdini_hu4256684468569992076.png&quot; /&gt;
-          &lt;p&gt;This is about houdini&lt;/p&gt;
+          &lt;img src=&quot;http://localhost:1313/graphics/emulator/thumbnail_hu9394090028627914358.jpg&quot; /&gt;
+          &lt;p&gt;A C++ emulator using DirectX 11 as a frontend so I could play around with some CRT effects.&lt;/p&gt;
         </description></item>
     <item>
-      <title>Graphics Programming</title>
-      <link>http://localhost:1313/graphics/</link>
+      <title>Remaking Outer Wilds Black Hole Shader</title>
+      <link>http://localhost:1313/shaders/blackhole/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/graphics/</guid><media:content url="http://localhost:1313/graphics/programming_hu9394090028627914358.jpg" type="image/jpeg"/>
+      <guid>http://localhost:1313/shaders/blackhole/</guid><media:content url="http://localhost:1313/shaders/blackhole/thumbnail_hu12191411956877019804.png" type="image/jpeg"/>
         <description>
-          &lt;img src=&quot;http://localhost:1313/graphics/programming_hu9394090028627914358.jpg&quot; /&gt;
-          &lt;p&gt;This is about graphics&lt;/p&gt;
+          &lt;img src=&quot;http://localhost:1313/shaders/blackhole/thumbnail_hu12191411956877019804.png&quot; /&gt;
+          &lt;p&gt;Implementing a gravitational lensing shader in Unity.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Paintable Stylized Edge Damage</title>
+      <link>http://localhost:1313/houdini/edgedamage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/edgedamage/</guid><media:content url="http://localhost:1313/houdini/edgedamage/thumbnail_hu5118035702446161430.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/edgedamage/thumbnail_hu5118035702446161430.png&quot; /&gt;
+          &lt;p&gt;Fast, artist-controllable stylized edge damage in a Houdini HDA. Plus a quick tutorial on custom Python Viewer Stroke States!&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Raytraced Image-Based Collision Detection</title>
+      <link>http://localhost:1313/graphics/raycollision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/graphics/raycollision/</guid><media:content url="http://localhost:1313/graphics/raycollision/thumbnail_hu13374409377997793924.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/graphics/raycollision/thumbnail_hu13374409377997793924.jpg&quot; /&gt;
+          &lt;p&gt;Fourth year capstone project at U of T. A novel approach to computing collision detection and response between rigid bodies by doing image based collision detection at the same time as a scene is rendered through raytracing.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Remaking Deaths Door’s Portal Effect</title>
+      <link>http://localhost:1313/shaders/portal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/shaders/portal/</guid><media:content url="http://localhost:1313/shaders/portal/thumbnail_hu7910343355886011656.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/portal/thumbnail_hu7910343355886011656.jpg&quot; /&gt;
+          &lt;p&gt;Using the stencil buffer and some rendering tricks in Unity to remake this portal effect from Death’s Door.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Creating Mesh Data From Shadow Projections</title>
+      <link>http://localhost:1313/houdini/shadowgeo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/shadowgeo/</guid><media:content url="http://localhost:1313/houdini/shadowgeo/thumbnail_hu13933144065643538935.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/shadowgeo/thumbnail_hu13933144065643538935.png&quot; /&gt;
+          &lt;p&gt;Generating clean geometry of a object’s shadow projection on to another mesh.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>DCC Art Scripts</title>
+      <link>http://localhost:1313/graphics/dcc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/graphics/dcc/</guid><media:content url="http://localhost:1313/graphics/dcc/thumbnail_hu13187812581945502427.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/graphics/dcc/thumbnail_hu13187812581945502427.png&quot; /&gt;
+          &lt;p&gt;Collection of small scripts written for various art software, mostly python. The content in this varies from stable tools to quick scripts I whipped up in 10 minutes in order to save time. I mainly just put these online in case it helps anyone else.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Faking PBR on Mobile using MatCaps</title>
+      <link>http://localhost:1313/shaders/matcaps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/shaders/matcaps/</guid><media:content url="http://localhost:1313/shaders/matcaps/thumbnail_hu18138109572283268007.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/shaders/matcaps/thumbnail_hu18138109572283268007.jpg&quot; /&gt;
+          &lt;p&gt;Implementing a low cost alternative to PBR shaders for low-end mobile devices.&lt;/p&gt;
         </description></item>
   </channel>
 </rss>

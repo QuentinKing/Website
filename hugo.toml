@@ -12,3 +12,6 @@ theme = 'gallery'
     linkedin = "https://www.linkedin.com/in/quentin-king/"
     instagram = "https://www.instagram.com/quontyn/"
     github = "https://github.com/QuentinKing"
+
+[markup.goldmark.renderer]
+unsafe= true

@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/houdini/alphacards/</loc>
+  </url><url>
+    <loc>http://localhost:1313/graphics/emulator/</loc>
+  </url><url>
     <loc>http://localhost:1313/shaders/</loc>
   </url><url>
+    <loc>http://localhost:1313/shaders/blackhole/</loc>
+  </url><url>
     <loc>http://localhost:1313/houdini/</loc>
+  </url><url>
+    <loc>http://localhost:1313/houdini/edgedamage/</loc>
+  </url><url>
+    <loc>http://localhost:1313/graphics/raycollision/</loc>
+  </url><url>
+    <loc>http://localhost:1313/shaders/portal/</loc>
+  </url><url>
+    <loc>http://localhost:1313/houdini/shadowgeo/</loc>
+  </url><url>
+    <loc>http://localhost:1313/graphics/dcc/</loc>
+  </url><url>
+    <loc>http://localhost:1313/shaders/matcaps/</loc>
   </url><url>
     <loc>http://localhost:1313/graphics/</loc>
   </url><url>

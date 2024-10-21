@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Houdini &#43; Procedural on Quentin King - Technical Artist</title>
+    <link>http://localhost:1313/houdini/</link>
+    <description>Recent content in Houdini &#43; Procedural on Quentin King - Technical Artist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/houdini/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alpha Cards to Opaque Geometry for UE5 Nanite Performance</title>
+      <link>http://localhost:1313/houdini/alphacards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/alphacards/</guid><media:content url="http://localhost:1313/houdini/alphacards/thumbnail_hu682673869464044546.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/alphacards/thumbnail_hu682673869464044546.png&quot; /&gt;
+          &lt;p&gt;Houdini pipeline to auto convert assets using alpha cards into opaque geometry. This allows the materials to use Nanite&#39;s fixed function rendering path in UE5 for optimized performance in the Nanite VizBuffer.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Paintable Stylized Edge Damage</title>
+      <link>http://localhost:1313/houdini/edgedamage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/edgedamage/</guid><media:content url="http://localhost:1313/houdini/edgedamage/thumbnail_hu5118035702446161430.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/edgedamage/thumbnail_hu5118035702446161430.png&quot; /&gt;
+          &lt;p&gt;Fast, artist-controllable stylized edge damage in a Houdini HDA. Plus a quick tutorial on custom Python Viewer Stroke States!&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Creating Mesh Data From Shadow Projections</title>
+      <link>http://localhost:1313/houdini/shadowgeo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/houdini/shadowgeo/</guid><media:content url="http://localhost:1313/houdini/shadowgeo/thumbnail_hu13933144065643538935.png" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/houdini/shadowgeo/thumbnail_hu13933144065643538935.png&quot; /&gt;
+          &lt;p&gt;Generating clean geometry of a object’s shadow projection on to another mesh.&lt;/p&gt;
+        </description></item>
+  </channel>
+</rss>
