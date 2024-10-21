@@ -6,7 +6,7 @@ description: Implementing a low cost alternative to PBR shaders for low-end mobi
 ---
 
 <center style="margin-top:2rem">
-    <img src="animation.gif">
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRydzNxN2V0dGN6eDJmaGQ3d3V3aTcyMmUzdDR4MXVnYXl5aGNmeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/miqRZLGx7vjGGaZ225/giphy.gif">
 </center>
 
 \
