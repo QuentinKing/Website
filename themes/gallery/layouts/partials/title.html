@@ -1,0 +1,8 @@
+{{ if .Title }}
+  <hgroup>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.Subtitle }}
+      <p>{{ . }}</p>
+    {{ end }}
+  </hgroup>
+{{ end }}

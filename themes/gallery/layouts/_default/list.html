@@ -1,0 +1,51 @@
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  {{ if not .Params.Postlist }}
+    <!-- Default gallery list -->
+    <section class="galleries">
+      {{ range where .Pages "Params.private" "ne" true }}
+        {{ partial "album-card.html" . }}
+      {{ end }}
+    </section>
+  {{ else }}
+    <!-- My post list -->
+    {{ $posts := (where .Pages "Params.private" "ne" true) }}
+
+    {{ range seq (len $posts) }}
+      {{ $post := (index $posts (sub . 1)) }}
+
+      {{ $images := $post.Resources.ByType "image" }}
+      {{ if gt (len $images) 0 }}
+        {{ $link := $post.RelPermalink }}
+        {{ $is_github := $post.Params.UseGithub }}
+        {{ if $is_github }}
+          {{ $link = $post.Params.Github }}
+        {{ end }}
+        
+        {{ $featured := ($images.GetMatch $post.Params.featured_image) | default (index $images 0) }}
+        {{ $thumbnail := $featured.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+        <section class="postpreview">
+          <a class="cardpost" href="{{ $link }}" title="{{ $post.Title }}">
+            <figure style="background-color: transparent">
+              <img class="lazyload" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" data-src="{{ $thumbnail.RelPermalink }}" />
+            </figure>
+          </a>
+
+          <div>
+            <h2 class="post-list-title"><a href="{{ $link }}">{{ $post.Title }}</a></h2>
+            <div class="post-list-description"><p> {{ $post.Description }} </p></div>
+            {{ if $is_github }}
+              <a class="read-more" href="{{ $link }}"> View On Github </a>
+            {{ else }}
+              <a class="read-more" href="{{ $link }}"> Read More </a>
+            {{ end }}
+          </div>
+        </section>
+
+        {{ if (ne . (len $posts)) }}
+          <hr style="height:1px;width:70%;color:gray;background-color:gray">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
