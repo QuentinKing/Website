@@ -111,7 +111,7 @@ gl_FragColor = (diffuse * DiffuseAmnt + matcapTotal * MatCapAmnt) * shadow;
         Some benefits of this shader technique:
         <div class="indent">
             <li>
-                SUPER flexible for artists. They can paint these MatCaps, and they can also render them out by pointing an orthographic camera at a sphere in whatever software they like. It allows artists to create both NPR or PBR materials.
+                Super flexible for artists. They can paint these MatCaps, and they can also render them out by pointing an orthographic camera at a sphere in whatever software they like. It allows artists to create both NPR or PBR materials.
             </li>
             <li>
                 Its only a texture lookup! No computations so your shaders are super low cost in terms of shader instructions.
