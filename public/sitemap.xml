@@ -14,6 +14,8 @@
   </url><url>
     <loc>http://localhost:1313/houdini/edgedamage/</loc>
   </url><url>
+    <loc>http://localhost:1313/graphics/unrealdecal/</loc>
+  </url><url>
     <loc>http://localhost:1313/graphics/raycollision/</loc>
   </url><url>
     <loc>http://localhost:1313/shaders/portal/</loc>

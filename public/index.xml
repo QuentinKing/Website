@@ -43,6 +43,15 @@
           &lt;p&gt;Fast, artist-controllable stylized edge damage in a Houdini HDA. Plus a quick tutorial on custom Python Viewer Stroke States!&lt;/p&gt;
         </description></item>
     <item>
+      <title>Passing 16-bit UV Data through Unreal&#39;s DBuffer</title>
+      <link>http://localhost:1313/graphics/unrealdecal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/graphics/unrealdecal/</guid><media:content url="http://localhost:1313/graphics/unrealdecal/thumbnail_hu4404344433302465438.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/graphics/unrealdecal/thumbnail_hu4404344433302465438.jpg&quot; /&gt;
+          &lt;p&gt;Encoding 16 bit data into Unreal&#39;s 8 bit DBuffer, and using custom decal responses to pass UV Coordinates through the decal system.&lt;/p&gt;
+        </description></item>
+    <item>
       <title>Raytraced Image-Based Collision Detection</title>
       <link>http://localhost:1313/graphics/raycollision/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
