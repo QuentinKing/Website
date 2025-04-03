@@ -103,7 +103,7 @@ To see the precision issues first hand, here&rsquo;s the vanilla approach of pas
 <p><br>
 You get pretty obvious stepping when you zoom in. This is also the full range of data we can represent. You can&rsquo;t write in any values above one or below zero.</p>
 <p><br>
-But we can represent a low precision floating point number with 16 bits using <a class="link" href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format"> IEEE 754 Half Precision </a>. And then the theory behind what we need to do is not too complicated. Seperate the lower and upper 8 bits of each float and write them into their own Dbuffer Channel. In my implementation of passing in UV Coordiates, I end up breaking it up like this:</p>
+But we can represent a low precision floating point number with 16 bits using <a class="link" href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format"> IEEE 754 Half Precision </a>. And then the theory behind what we need to do is not too complicated. Separate the lower and upper 8 bits of each float and write them into their own Dbuffer Channel. In my implementation of passing in UV Coordiates, I end up breaking it up like this:</p>
 <br>
 <div>
     <ul class="bullet">
